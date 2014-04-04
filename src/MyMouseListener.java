@@ -32,11 +32,13 @@ public class MyMouseListener extends MouseAdapter {
       
       else if (e.getButton() == MouseEvent.BUTTON2) {
     	  
+		  String myfile = JOptionPane.showInputDialog("What would you like to name the file? Be sure it is a .txt file!!!!");
+    	  
     	  Writer writer = null;
 
     	  try {
     	      writer = new BufferedWriter(new OutputStreamWriter(
-    	            new FileOutputStream("Map.txt"), "utf-8"));
+    	            new FileOutputStream(myfile), "utf-8"));
 	            MyColor[][] myColors = colorGrid.getMyColors();
 	            for (int row = 0; row < myColors.length; row++) {
 	               for (int col = 0; col < myColors[row].length; col++) {
